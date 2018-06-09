@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.meiqu.beauty.MyZoomImageView
+        android:id="@id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <com.meiqu.beauty.ScratchView
+        android:id="@id/scratch_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@id/change_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45.0dip"
+        android:background="@drawable/btn_bg"
+        android:gravity="center"
+        android:visibility="visible" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/change" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/progressTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100.0dip"
+        android:text="已擦去0%，继续加油哦！"
+        android:textColor="@android:color/white"
+        android:textSize="18.0sp" />
+
+    <ImageView
+        android:id="@id/tip_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120.0dip"
+        android:src="@drawable/font1"
+        android:visibility="gone" />
+
+</RelativeLayout>

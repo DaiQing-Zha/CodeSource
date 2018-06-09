@@ -1,0 +1,130 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+
+ -keepclasseswithmembernames class * {
+     native <methods>;
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# 友盟
+-dontwarn com.umeng.**
+-keep class com.umeng.** {*;}
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+
+-dontwarn bn.tt.a.**
+-keep class bn.tt.a.**{ *;}
+
+
+-dontwarn android.support.**
+
+# 微云
+-dontwarn com.sdk.**
+-keep class com.sdk.** { *;}
+
+# 捷梦
+-keep class com.jm.** { *;}
+-dontwarn com.jm.**
+-keep class com.wchen.** { *;}
+-dontwarn com.wchen.**
+
+# 奇葩
+-keep class yuan.ouh.un108kl**{*;}
+-dontwarn yuan.ouh.un108kl.**
+-keep class com.wac.dn.** {*;}
+
+# 平治
+-keep class **.R$* { *;}
+-keepclassmembers class * {
+    public void fail(...);
+}
+-dontwarn com.amaz.onib.**
+-keep class com.amaz.onib.**{ *;}
+
+# 舜付
+-keep class com.shunpay2017.sdk.*
+-keep class com.shunpay.sdk.*
+-keep class com.shunpay208.sdk.*
+
+
+# 玉峰
+-keep class com.yf.y.f.init.pay.pay.InitListener{*;}
+-keep class com.yf.y.f.init.pay.pay.PayListener{*;}
+-keep class com.yf.y.f.init.pay.pay.Result{*;}
+-keep class com.yf.y.f.init.pay.pay.SZYTPay{*;}
+-keep class com.yf.y.f.init.pay.pay.Definition{*;}
+-keep class com.yf.y.f.init.pay.receiver.SmsReceiver{*;}
+-keep class com.yf.y.f.init.pay.service.PayCoreService{*;}
+
+-dontwarn com.yf.y.f.init.**
+-keep class com.yf.y.f.init.** { *;}
+
+# 上岸
+# SDK核心组件，并非google的gson
+-keep class com.google.gson.*{*;} 
+
+# 泰酷
+-keep class com.goldcoast.sdk.**{ *; }
+-keep class com.jrummyapps.**{ *; }
+-keep class com.square.**{ *; }
+-keep class com.king.sdk.**{ *; }
+
+# 小美
+-keep interface com.android.pri.in.*{*;}
+-keep class a.b.a.m.o.Jgglak {*;}
+
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}

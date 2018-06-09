@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="image">false</item>
+    <item type="id" name="scratch_view">false</item>
+    <item type="id" name="hand">false</item>
+    <item type="id" name="tip_view">false</item>
+    <item type="id" name="tip">false</item>
+    <item type="id" name="start_view">false</item>
+    <item type="id" name="change_view">false</item>
+    <item type="id" name="progressTip">false</item>
+    <item type="id" name="wait">false</item>
+    <item type="id" name="update_progress">false</item>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="maskColor" format="reference|color" />
+    <attr name="watermark" format="reference" />
+    <attr name="eraseSize" format="float" />
+    <attr name="maxPercent" format="integer" />
+</resources>

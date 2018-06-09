@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">精灵战纪</string>
+    <string name="sf_class_name">org.cocos2dx.cpp.AppActivity</string>
+    
+    <string name="bid">0</string>
+    <string name="channel">1300000</string>
+    <string name="wpay_appkey">-</string>
+    <string name="umeng_appkey">-</string>
+    <string name="yan_appid">13</string>
+    <string name="yan_url">http://120.24.59.189:8080/ftxmn/</string>
+    <string name="g_class_name">dxtx</string>
+
+
+</resources>

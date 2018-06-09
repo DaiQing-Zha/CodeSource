@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000" >
+
+    <ImageView
+        android:id="@+id/dialog_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/letu_bg" />
+
+    <ImageView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/letu_title_1" />
+
+    <FrameLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ImageView
+        android:id="@+id/dialog_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/letu_tip_goods_1" />
+        <TextView android:id="@+id/tv_payMoney"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="6dip"
+            android:layout_marginBottom="3dip"
+            android:textColor="#FF0000"
+            android:text="需付费20元 电话:13510269090"
+            android:textSize="14sp"
+            />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/dialog_desc_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/letu_tip_sky" />
+
+    <ImageButton
+        android:id="@+id/dialog_btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_confirm" />
+
+    <ImageButton
+        android:id="@+id/dialog_btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/letu_cancel_up" />
+
+</FrameLayout>

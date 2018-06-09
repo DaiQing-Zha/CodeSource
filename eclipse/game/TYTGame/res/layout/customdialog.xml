@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/layout" android:background="@drawable/bg" android:scrollbars="vertical" android:layout_width="300.0dip" android:layout_height="wrap_content" android:minWidth="250.0dip">
+        <TextView android:textSize="17.0dip" android:textStyle="bold" android:textColor="@android:color/black" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/prompt" />
+        <RelativeLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:minHeight="50.0dip">
+            <TextView android:textSize="15.0dip" android:textColor="@android:color/black" android:gravity="center" android:id="@id/message" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/exit_app" />
+        </RelativeLayout>
+        <LinearLayout android:background="#ffd1d1d1" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="50.0dip">
+            <Button android:textSize="18.0dip" android:textColor="@color/btntextcolor" android:gravity="center" android:id="@id/cancel_btn" android:background="@drawable/left_btn_select" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/single_line" android:background="#ffd1d1d1" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <Button android:textSize="18.0dip" android:textColor="@color/btntextcolor" android:gravity="center" android:id="@id/confirm_btn" android:background="@drawable/right_btn_select" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/confirm" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

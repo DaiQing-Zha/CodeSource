@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mmpay_appui_ll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/mmpay_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/letu_bg" >
+
+        <ImageView
+            android:id="@+id/mmpay_tip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/letu_tip_goods_1" />
+
+        <ImageButton
+            android:id="@+id/mmpay_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@id/mmpay_tip1"
+            android:layout_marginRight="-16.0dip"
+            android:layout_marginTop="38.0dip"
+            android:tag="src=mmpay_cancel_up" />
+
+        <Button
+            android:id="@+id/mmpay_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="280.0dip"
+            android:tag="src=mmpay_confirm_up" />
+
+        <ImageView
+            android:id="@+id/mmpay_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="84.0dip"
+            android:tag="src=mmpay_title" />
+
+        <ImageView
+            android:id="@+id/mmpay_tip_sky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="257.0dip"
+            android:tag="src=mmpay_tip_sky" />
+
+        <TextView
+            android:id="@+id/temp_tong_yong_zhe_zhao"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginTop="257.0dip"
+            android:background="#ff333333"
+            android:gravity="center_horizontal" />
+
+        <ImageView
+            android:id="@+id/mmpay_tip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>
